@@ -12,6 +12,7 @@ func main() {
 	a, b, c := getVariables()
 	fa, fb := getVariablesFloat()
 	name = getName()
+	unicodeString := getUnicodeString()
 	fmt.Printf(helloWorld, name, lastName)
 	fmt.Println("* Esta es otra forma de imprimir con un salto de línea")
 	fmt.Println("int: Número entero de al menos 32 bits en adelante", a)
@@ -19,6 +20,9 @@ func main() {
 	fmt.Println("int32: Número entero de máximo 64 bits", c)
 	fmt.Println("float32: Número flotante con precisión de 32 bits", fa)
 	fmt.Println("float64: Número flotante con precisión de 64 bits", fb)
+	fmt.Println(unicodeString, "Contar letras de un string 'hola'", len("Hola"))
+	fmt.Println("Primera letra de mi nombre en ASCII:", name[0])
+	fmt.Println("Primera letra de mi nombre:", string(name[0]))
 	fmt.Println(number, a, b, c, testConst)
 }
 
@@ -35,6 +39,10 @@ func getVariables() (int, int32, int64) {
 
 func getVariablesFloat() (float32, float64) {
 	return float32(0.1), float64(float32(0.1))
+}
+
+func getUnicodeString() string {
+	return "もしもし！"
 }
 
 func sum(a int, b int) int {
