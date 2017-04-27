@@ -30,6 +30,7 @@ func main() {
 	array()
 	slice()
 	ifTest()
+	switchTest()
 }
 
 func getName() string {
@@ -90,5 +91,27 @@ func ifTest() {
 		fmt.Println("[Aleatorio] El número es mayor a 5")
 	} else {
 		fmt.Println("[Aleatorio] El número es menor o igual a 5")
+	}
+}
+
+func switchTest() {
+	number := 0
+	fmt.Print("[Switch] Ingresa un número del 1 al 10: ")
+	fmt.Scanf("%d", &number)
+	// Switch sin condicionales ni comparadores
+	switch number {
+	case 0:
+		fmt.Println("El número es 0")
+	default:
+		fmt.Println("El número es mayor o menor a 0")
+	}
+
+	switch {
+	case number >= 5 && number <= 10:
+		fmt.Println("[Switch con condicionales y comparadores] El número es mayor o igual a 5")
+	case number < 5 && number > 0:
+		fmt.Println("[Switch con condicionales y comparadores] El número es menor que 5")
+	default:
+		fmt.Println("[Switch con condicionales y comparadores] El número no está dentro del rango sugerido")
 	}
 }
