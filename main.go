@@ -75,20 +75,13 @@ func slice() {
 }
 
 func ifTest() {
-	number := 0
-	fmt.Print("Ingresa un número del 1 al 10: ")
+	var number = 0
+	fmt.Print("Ingresen un número del 1 al 10: ")
 	fmt.Scanf("%d", &number)
-	if number >= 5 && number <= 10 {
-		fmt.Println("El número es mayor o igual a 5")
-	} else if number < 5 && number > 0 {
-		fmt.Println("El número es menor que 5")
+	if number%2 == 0 {
+		fmt.Println("El número es par")
 	} else {
-		fmt.Println("El número no está dentro del rango sugerido")
+		fmt.Println("El número es impar")
 	}
 
-	if number2 := rand.Int31n(10); number2 > 5 {
-		fmt.Println("[Aleatorio] El número es mayor a 5")
-	} else {
-		fmt.Println("[Aleatorio] El número es menor o igual a 5")
-	}
 }
