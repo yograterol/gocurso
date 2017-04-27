@@ -24,6 +24,8 @@ func main() {
 	fmt.Println("Primera letra de mi nombre en ASCII:", name[0])
 	fmt.Println("Primera letra de mi nombre:", string(name[0]))
 	fmt.Println(number, a, b, c, testConst)
+	array()
+	slice()
 }
 
 func getName() string {
@@ -47,4 +49,23 @@ func getUnicodeString() string {
 
 func sum(a int, b int) int {
 	return a + b
+}
+
+func array() {
+	var arr1 [2]string
+	arr2 := [5]int{1, 2, 3, 4, 5}
+	arr1[0] = "mi"
+	arr1[1] = "nombre"
+	fmt.Println("Array declarado con var", arr1)
+	fmt.Println("Array declarado con inferencia de tipo", arr2)
+}
+
+func slice() {
+	var slic1 []string
+	slic2 := []int{1, 2, 3, 4, 5}
+	// append agrega un elemento al final del Slice
+	slic1 = append(slic1, "mi")
+	slic1 = append(slic1, "nombre")
+	fmt.Println("Slice declarado con var", slic1)
+	fmt.Println("Slice declarado con inferencia de tipo", slic2)
 }
