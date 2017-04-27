@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 const helloWorld string = "Hola %s %s, bienvenido al fascinante mundo de Go.\n"
 const testConst = "Test"
@@ -26,6 +29,7 @@ func main() {
 	fmt.Println(number, a, b, c, testConst)
 	array()
 	slice()
+	ifTest()
 }
 
 func getName() string {
@@ -68,4 +72,23 @@ func slice() {
 	slic1 = append(slic1, "nombre")
 	fmt.Println("Slice declarado con var", slic1)
 	fmt.Println("Slice declarado con inferencia de tipo", slic2)
+}
+
+func ifTest() {
+	number := 0
+	fmt.Print("Ingresa un número del 1 al 10: ")
+	fmt.Scanf("%d", &number)
+	if number >= 5 && number <= 10 {
+		fmt.Println("El número es mayor o igual a 5")
+	} else if number < 5 && number > 0 {
+		fmt.Println("El número es menor que 5")
+	} else {
+		fmt.Println("El número no está dentro del rango sugerido")
+	}
+
+	if number2 := rand.Int31n(10); number2 > 5 {
+		fmt.Println("[Aleatorio] El número es mayor a 5")
+	} else {
+		fmt.Println("[Aleatorio] El número es menor o igual a 5")
+	}
 }
